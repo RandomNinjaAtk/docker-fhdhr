@@ -16,7 +16,13 @@ RUN \
 		/tmp/* \
 		/var/lib/apt/lists/* \
 		/var/tmp/* && \
-	echo "************ install python packages ************"
+	echo "************ install download fHDHR ************"  && \
+	git clone https://github.com/fHDHR/fHDHR.git && \
+	echo "************ install pip dependencies ************" && \
+	python3 -m pip install --user --upgrade pip && \	
+ 	pip3 install -r fHDHR/requirements.txt && \
+	echo "************ cleanup  ************" && \
+	rm -rf fHDHR
 
 # copy local files
 COPY root/ /
