@@ -18,6 +18,9 @@ RUN \
 		/var/tmp/* && \
 	echo "************ install python packages ************"
 
+# copy local files
+COPY root/ /
+
 # set work directory
 WORKDIR /config
 
