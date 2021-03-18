@@ -1,0 +1,25 @@
+FROM lsiobase/ubuntu:focal
+LABEL maintainer="RandomNinjaAtk"
+ENV TITLE="fHDHR"
+ENV VERSION="0.0.01"
+
+RUN \
+	echo "************ install & upgrade packages ************" && \
+	apt-get update -y && \
+	apt-get install -y --no-install-recommends \
+		python3 \
+		python3-pip \
+		gcc \
+		git \
+		ffmpeg && \
+	rm -rf \
+		/tmp/* \
+		/var/lib/apt/lists/* \
+		/var/tmp/* && \
+	echo "************ install python packages ************"
+
+# set work directory
+WORKDIR /config
+
+# ports and volumes
+VOLUME /config
