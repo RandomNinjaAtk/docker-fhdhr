@@ -13,4 +13,15 @@ else
 	echo "fHDHR already installed"
 fi
 
+if [ ! -f /config/config.ini ]; then
+	echo "fHDHR Config does not exist, importing example"
+	cp /config/fHDHR/config.example.ini /config/config.ini
+else
+	echo "fHDHR Config exists"
+fi
+
+echo "Starting fHDHR..."
+python3 /config/fHDHR/main.py -c=/config/config.ini
+
+
 exit $?
