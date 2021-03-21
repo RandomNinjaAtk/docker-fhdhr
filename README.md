@@ -31,10 +31,10 @@ Container images are configured using parameters passed at runtime (such as thos
 | ---- | --- |
 | `-p 5004` | The port for the fHDHR webinterface |
 | `-v /config` | Configuration files for fHDHR. |
-| `-e ORIGIN_PLUGINS="plugin,plugin"` | Example: locast,plutotv (this is a ',' separated list plugin names) |
-| `-e INTERFACE_PLUGINS="plugin,plugin"` | Example: hdhr  (this is a ', ' separated list plugin names) |
-| `-e STEAM_PLUGINS="plugin,plugin"` | Example: vlc (this is a ', ' separated list plugin names) |
-| `-e EPG_PLUGINS="plugin,plugin"` | Example: zap2it  (this is a ', ' separated list plugin names) |
+| `-e ORIGIN_PLUGINS=plugin,plugin` | Example: locast,plutotv (this is a ',' separated list plugin names) |
+| `-e INTERFACE_PLUGINS=plugin,plugin` | Example: hdhr  (this is a ', ' separated list plugin names) |
+| `-e STREAM_PLUGINS=plugin,plugin` | Example: vlc (this is a ', ' separated list plugin names) |
+| `-e EPG_PLUGINS=plugin,plugin` | Example: zap2it  (this is a ', ' separated list plugin names) |
 
 ### docker
 
@@ -44,10 +44,10 @@ docker create \
   --network bridge \
   -p 5004
   -v /path/to/config/files:/config \
-  -e ORIGIN_PLUGINS="plugin,plugin" \
-  -e INTERFACE_PLUGINS="plugin,plugin" \
-  -e STEAM_PLUGINS="plugin,plugin" \
-  -e EPG_PLUGINS="plugin,plugin"\
+  -e ORIGIN_PLUGINS=plugin,plugin \
+  -e INTERFACE_PLUGINS=plugin,plugin \
+  -e STREAM_PLUGINS=plugin,plugin \
+  -e EPG_PLUGINS=plugin,plugin \
   randomninjaatk/fhdhr 
 ```
 
@@ -68,10 +68,10 @@ services:
     volumes:
       - /path/to/config/files:/config
     environment:
-      - ORIGIN_PLUGINS="plugin,plugin"\
-      - INTERFACE_PLUGINS="plugin,plugin"\
-      - STEAM_PLUGINS="plugin,plugin"\
-      - EPG_PLUGINS="plugin,plugin"\
+      - ORIGIN_PLUGINS=plugin,plugin\
+      - INTERFACE_PLUGINS=plugin,plugin\
+      - STREAM_PLUGINS=plugin,plugin\
+      - EPG_PLUGINS=plugin,plugin\
     restart: unless-stopped
 ```
 
