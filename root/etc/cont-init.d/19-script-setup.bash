@@ -54,7 +54,7 @@ else
 fi
 
 if [ ! -z "$STREAM_PLUGINS" ]; then
-	IFS=', ' read -r -a filters <<< "$STEAM_PLUGINS"
+	IFS=', ' read -r -a filters <<< "$STREAM_PLUGINS"
 	for filter in "${filters[@]}"
 	do
 		if [ ! -d /config/fHDHR/plugins/fHDHR_plugin_stream_${filter} ]; then
