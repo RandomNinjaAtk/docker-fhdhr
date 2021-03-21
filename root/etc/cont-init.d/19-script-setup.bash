@@ -38,7 +38,7 @@ else
 fi
 
 if [ ! -z "$INTERFACE_PLUGINS" ]; then
-	FS=', ' read -r -a filters <<< "$INTERFACE_PLUGINS"
+	IFS=', ' read -r -a filters <<< "$INTERFACE_PLUGINS"
 	for filter in "${filters[@]}"
 	do
 		if [ ! -d /config/fHDHR/plugins/fHDHR_plugin_interface_${filter} ]; then
@@ -54,7 +54,7 @@ else
 fi
 
 if [ ! -z "$STEAM_PLUGINS" ]; then
-	FS=', ' read -r -a filters <<< "$STEAM_PLUGINS"
+	IFS=', ' read -r -a filters <<< "$STEAM_PLUGINS"
 	for filter in "${filters[@]}"
 	do
 		if [ ! -d /config/fHDHR/plugins/fHDHR_plugin_stream_${filter} ]; then
@@ -70,7 +70,7 @@ else
 fi
 
 if [ ! -z "$EPG_PLUGINS" ]; then
-	FS=', ' read -r -a filters <<< "$EPG_PLUGINS"
+	IFS=', ' read -r -a filters <<< "$EPG_PLUGINS"
 	for filter in "${filters[@]}"
 	do
 		if [ ! -d /config/fHDHR/plugins/fHDHR_plugin_epg_${filter} ]; then
