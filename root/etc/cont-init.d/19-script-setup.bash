@@ -53,7 +53,7 @@ else
 	echo "No Interface plugins to install"
 fi
 
-if [ ! -z "$STEAM_PLUGINS" ]; then
+if [ ! -z "$STREAM_PLUGINS" ]; then
 	IFS=', ' read -r -a filters <<< "$STEAM_PLUGINS"
 	for filter in "${filters[@]}"
 	do
