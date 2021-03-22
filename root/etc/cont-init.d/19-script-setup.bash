@@ -34,6 +34,9 @@ if [ ! -z "$ORIGIN_PLUGINS" ]; then
 			cd /config/
 		else
 			echo "Origin Plugin \"${filter}\" already installed..."
+			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_origin_${filter}/requirements.txt" ]; then
+				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_origin_${filter}/requirements.txt"
+			fi
 		fi
 	done
 else
@@ -53,6 +56,9 @@ if [ ! -z "$INTERFACE_PLUGINS" ]; then
 			cd /config/
 		else
 			echo "Interface Plugin \"${filter}\" already installed..."
+			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_interface_${filter}/requirements.txt" ]; then
+				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_interface_${filter}/requirements.txt"
+			fi
 		fi
 	done
 else
@@ -72,6 +78,9 @@ if [ ! -z "$STREAM_PLUGINS" ]; then
 			cd /config/
 		else
 			echo "Stream Plugin \"${filter}\" already installed..."
+			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_stream_${filter}/requirements.txt" ]; then
+				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_stream_${filter}/requirements.txt"
+			fi
 		fi
 	done
 else
@@ -91,6 +100,9 @@ if [ ! -z "$EPG_PLUGINS" ]; then
 			cd /config/
 		else
 			echo "EPG Plugin \"${filter}\" already installed..."
+			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_epg_${filter}/requirements.txt" ]; then
+				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_epg_${filter}/requirements.txt"
+			fi
 		fi
 	done
 else
