@@ -28,6 +28,9 @@ if [ ! -z "$ORIGIN_PLUGINS" ]; then
 		if [ ! -d /config/fHDHR/plugins/fHDHR_plugin_origin_${filter} ]; then
 			cd /config/fHDHR/plugins
 			git clone https://github.com/fHDHR/fHDHR_plugin_origin_${filter}.git
+			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_origin_${filter}/requirements.txt" ]; then
+				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_origin_${filter}/requirements.txt"
+			fi
 			cd /config/
 		else
 			echo "Origin Plugin \"${filter}\" already installed..."
@@ -44,6 +47,9 @@ if [ ! -z "$INTERFACE_PLUGINS" ]; then
 		if [ ! -d /config/fHDHR/plugins/fHDHR_plugin_interface_${filter} ]; then
 			cd /config/fHDHR/plugins
 			git clone https://github.com/fHDHR/fHDHR_plugin_interface_${filter}.git
+			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_interface_${filter}/requirements.txt" ]; then
+				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_interface_${filter}/requirements.txt"
+			fi
 			cd /config/
 		else
 			echo "Interface Plugin \"${filter}\" already installed..."
@@ -60,6 +66,9 @@ if [ ! -z "$STREAM_PLUGINS" ]; then
 		if [ ! -d /config/fHDHR/plugins/fHDHR_plugin_stream_${filter} ]; then
 			cd /config/fHDHR/plugins
 			git clone https://github.com/fHDHR/fHDHR_plugin_stream_${filter}.git
+			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_stream_${filter}/requirements.txt" ]; then
+				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_stream_${filter}/requirements.txt"
+			fi
 			cd /config/
 		else
 			echo "Stream Plugin \"${filter}\" already installed..."
@@ -76,6 +85,9 @@ if [ ! -z "$EPG_PLUGINS" ]; then
 		if [ ! -d /config/fHDHR/plugins/fHDHR_plugin_epg_${filter} ]; then
 			cd /config/fHDHR/plugins
 			git clone https://github.com/fHDHR/fHDHR_plugin_epg_${filter}.git
+			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_epg_${filter}/requirements.txt" ]; then
+				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_epg_${filter}/requirements.txt"
+			fi
 			cd /config/
 		else
 			echo "EPG Plugin \"${filter}\" already installed..."
@@ -85,9 +97,7 @@ else
 	echo "No EPG plugins to install"
 fi
 
-
 echo "Starting fHDHR..."
 python3 /config/fHDHR/main.py -c=/config/config.ini
-
 
 exit $?
