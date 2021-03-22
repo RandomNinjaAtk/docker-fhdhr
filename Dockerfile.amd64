@@ -11,7 +11,8 @@ RUN \
 		python3-pip \
 		gcc \
 		git \
-		ffmpeg && \
+		ffmpeg \
+		youtube-dl && \
 	rm -rf \
 		/tmp/* \
 		/var/lib/apt/lists/* \
