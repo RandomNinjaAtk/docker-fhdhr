@@ -11,6 +11,9 @@ if [ ! -d /config/fHDHR ]; then
 	git clone https://github.com/fHDHR/fHDHR.git
 else
 	echo "fHDHR already installed"
+	echo "Updating...."
+	git -C /config/fHDHR reset --hard HEAD && \
+    	git -C /config/fHDHR pull origin master
 fi
 
 if [ ! -f /config/config.ini ]; then
@@ -37,6 +40,9 @@ if [ ! -z "$ORIGIN_PLUGINS" ]; then
 			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_origin_${filter}/requirements.txt" ]; then
 				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_origin_${filter}/requirements.txt"
 			fi
+			echo "Updating...."
+			git -C /config/fHDHR/plugins/fHDHR_plugin_origin_${filter} reset --hard HEAD && \
+    			git -C /config/fHDHR/plugins/fHDHR_plugin_origin_${filter} pull origin master
 		fi
 	done
 else
@@ -59,6 +65,9 @@ if [ ! -z "$INTERFACE_PLUGINS" ]; then
 			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_interface_${filter}/requirements.txt" ]; then
 				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_interface_${filter}/requirements.txt"
 			fi
+			echo "Updating...."
+			git -C /config/fHDHR/plugins/fHDHR_plugin_interface_${filter} reset --hard HEAD && \
+    			git -C /config/fHDHR/plugins/fHDHR_plugin_interface_${filter} pull origin master
 		fi
 	done
 else
@@ -81,6 +90,9 @@ if [ ! -z "$STREAM_PLUGINS" ]; then
 			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_stream_${filter}/requirements.txt" ]; then
 				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_stream_${filter}/requirements.txt"
 			fi
+			echo "Updating...."
+			git -C /config/fHDHR/plugins/fHDHR_plugin_stream_${filter} reset --hard HEAD && \
+    			git -C /config/fHDHR/plugins/fHDHR_plugin_stream_${filter} pull origin master
 		fi
 	done
 else
@@ -103,6 +115,9 @@ if [ ! -z "$EPG_PLUGINS" ]; then
 			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_epg_${filter}/requirements.txt" ]; then
 				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_epg_${filter}/requirements.txt"
 			fi
+			echo "Updating...."
+			git -C /config/fHDHR/plugins/fHDHR_plugin_epg_${filter} reset --hard HEAD && \
+    			git -C /config/fHDHR/plugins/fHDHR_plugin_epg_${filter} pull origin master
 		fi
 	done
 else
