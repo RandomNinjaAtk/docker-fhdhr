@@ -13,7 +13,7 @@ else
 	echo "fHDHR already installed"
 	echo "Updating...."
 	git -C /config/fHDHR reset --hard HEAD && \
-    	git -C /config/fHDHR pull origin master
+    	git -C /config/fHDHR pull origin main
 fi
 
 if [ ! -f /config/config.ini ]; then
@@ -42,7 +42,7 @@ if [ ! -z "$ORIGIN_PLUGINS" ]; then
 			fi
 			echo "Updating...."
 			git -C /config/fHDHR/plugins/fHDHR_plugin_origin_${filter} reset --hard HEAD && \
-    			git -C /config/fHDHR/plugins/fHDHR_plugin_origin_${filter} pull origin master
+    			git -C /config/fHDHR/plugins/fHDHR_plugin_origin_${filter} pull origin main
 		fi
 	done
 else
@@ -67,7 +67,7 @@ if [ ! -z "$INTERFACE_PLUGINS" ]; then
 			fi
 			echo "Updating...."
 			git -C /config/fHDHR/plugins/fHDHR_plugin_interface_${filter} reset --hard HEAD && \
-    			git -C /config/fHDHR/plugins/fHDHR_plugin_interface_${filter} pull origin master
+    			git -C /config/fHDHR/plugins/fHDHR_plugin_interface_${filter} pull origin main
 		fi
 	done
 else
@@ -92,7 +92,7 @@ if [ ! -z "$STREAM_PLUGINS" ]; then
 			fi
 			echo "Updating...."
 			git -C /config/fHDHR/plugins/fHDHR_plugin_stream_${filter} reset --hard HEAD && \
-    			git -C /config/fHDHR/plugins/fHDHR_plugin_stream_${filter} pull origin master
+    			git -C /config/fHDHR/plugins/fHDHR_plugin_stream_${filter} pull origin main
 		fi
 	done
 else
@@ -117,7 +117,7 @@ if [ ! -z "$EPG_PLUGINS" ]; then
 			fi
 			echo "Updating...."
 			git -C /config/fHDHR/plugins/fHDHR_plugin_epg_${filter} reset --hard HEAD && \
-    			git -C /config/fHDHR/plugins/fHDHR_plugin_epg_${filter} pull origin master
+    			git -C /config/fHDHR/plugins/fHDHR_plugin_epg_${filter} pull origin main
 		fi
 	done
 else
