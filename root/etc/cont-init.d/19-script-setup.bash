@@ -14,6 +14,7 @@ else
 	echo "Updating...."
 	git -C /config/fHDHR reset --hard HEAD && \
     	git -C /config/fHDHR pull origin main
+	pip3 install -r fHDHR/requirements.txt
 fi
 
 if [ ! -f /config/config.ini ]; then
@@ -37,12 +38,12 @@ if [ ! -z "$ORIGIN_PLUGINS" ]; then
 			cd /config/
 		else
 			echo "Origin Plugin \"${filter}\" already installed..."
-			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_origin_${filter}/requirements.txt" ]; then
-				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_origin_${filter}/requirements.txt"
-			fi
 			echo "Updating...."
 			git -C /config/fHDHR/plugins/fHDHR_plugin_origin_${filter} reset --hard HEAD && \
     			git -C /config/fHDHR/plugins/fHDHR_plugin_origin_${filter} pull origin main
+			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_origin_${filter}/requirements.txt" ]; then
+				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_origin_${filter}/requirements.txt"
+			fi
 		fi
 	done
 else
@@ -62,12 +63,12 @@ if [ ! -z "$INTERFACE_PLUGINS" ]; then
 			cd /config/
 		else
 			echo "Interface Plugin \"${filter}\" already installed..."
-			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_interface_${filter}/requirements.txt" ]; then
-				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_interface_${filter}/requirements.txt"
-			fi
 			echo "Updating...."
 			git -C /config/fHDHR/plugins/fHDHR_plugin_interface_${filter} reset --hard HEAD && \
     			git -C /config/fHDHR/plugins/fHDHR_plugin_interface_${filter} pull origin main
+			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_interface_${filter}/requirements.txt" ]; then
+				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_interface_${filter}/requirements.txt"
+			fi
 		fi
 	done
 else
@@ -87,12 +88,12 @@ if [ ! -z "$STREAM_PLUGINS" ]; then
 			cd /config/
 		else
 			echo "Stream Plugin \"${filter}\" already installed..."
-			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_stream_${filter}/requirements.txt" ]; then
-				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_stream_${filter}/requirements.txt"
-			fi
 			echo "Updating...."
 			git -C /config/fHDHR/plugins/fHDHR_plugin_stream_${filter} reset --hard HEAD && \
     			git -C /config/fHDHR/plugins/fHDHR_plugin_stream_${filter} pull origin main
+			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_stream_${filter}/requirements.txt" ]; then
+				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_stream_${filter}/requirements.txt"
+			fi
 		fi
 	done
 else
@@ -112,12 +113,12 @@ if [ ! -z "$EPG_PLUGINS" ]; then
 			cd /config/
 		else
 			echo "EPG Plugin \"${filter}\" already installed..."
-			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_epg_${filter}/requirements.txt" ]; then
-				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_epg_${filter}/requirements.txt"
-			fi
 			echo "Updating...."
 			git -C /config/fHDHR/plugins/fHDHR_plugin_epg_${filter} reset --hard HEAD && \
     			git -C /config/fHDHR/plugins/fHDHR_plugin_epg_${filter} pull origin main
+			if [ -f "/config/fHDHR/plugins/fHDHR_plugin_epg_${filter}/requirements.txt" ]; then
+				pip3 install -r "/config/fHDHR/plugins/fHDHR_plugin_epg_${filter}/requirements.txt"
+			fi
 		fi
 	done
 else
