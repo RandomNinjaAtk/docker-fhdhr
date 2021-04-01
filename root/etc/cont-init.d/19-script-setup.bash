@@ -14,7 +14,7 @@ else
 	echo "Updating...."
 	git -C /config/fHDHR reset --hard HEAD && \
     	git -C /config/fHDHR pull origin main
-	pip3 install -r fHDHR/requirements.txt
+	pip3 install -r /config/fHDHR/requirements.txt
 fi
 
 if [ ! -f /config/config.ini ]; then
