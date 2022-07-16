@@ -1,9 +1,8 @@
+# Deprecated
+
+This repository is now deprecated, will no longer be updated and is being set to archived.
+
 # [RandomNinjaAtk/fHDHR](https://github.com/RandomNinjaAtk/docker-fhdhr)
-[![Docker Build](https://img.shields.io/docker/cloud/automated/randomninjaatk/fhdhr?style=flat-square)](https://hub.docker.com/r/randomninjaatk/fhdhr)
-[![Docker Pulls](https://img.shields.io/docker/pulls/randomninjaatk/fhdhr?style=flat-square)](https://hub.docker.com/r/randomninjaatk/fhdhr)
-[![Docker Stars](https://img.shields.io/docker/stars/randomninjaatk/fhdhr?style=flat-square)](https://hub.docker.com/r/randomninjaatk/fhdhr)
-[![Docker Hub](https://img.shields.io/badge/Open%20On-DockerHub-blue?style=flat-square)](https://hub.docker.com/r/randomninjaatk/fhdhr)
-[![Discord](https://img.shields.io/discord/747100476775858276.svg?style=flat-square&label=Discord&logo=discord)](https://discord.gg/JumQXDc "realtime support / chat with the community." )
 
 [fHDHR](https://github.com/fHDHR/fHDHR) - This application is a Python service provides an interface to take various sources of video and make them accessible to client software, such as Plex Media Server (PMS) or Emby by acting like a HDHomerun or an m3u Tuner and an XMLTV provider.
 
